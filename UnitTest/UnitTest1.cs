@@ -388,7 +388,7 @@ namespace UnitTest
         /// Convert String To Number Test Cases
         /// </summary>
         [Fact]
-        public void ConvertStringToNumber_Equal()
+        public void ConvertStringToNumber_True()
         {
             //Arrange
             string a = "1999";
@@ -396,6 +396,16 @@ namespace UnitTest
             bool result = a.ConvertStringToNumber();
             //Assert
             Assert.True(result);
+        }
+        [Fact]
+        public void ConvertStringToNumber_False__DecimalCase()
+        {
+            //Arrange
+            string a = "1999.9";
+            //Act
+            bool result = a.ConvertStringToNumber();
+            //Assert
+            Assert.False(result);
         }
         [Fact]
         public void ConvertStringToNumber_False()
